@@ -1,0 +1,11 @@
+---
+- name: Create info.txt file in /opt/devops directory on all nodes
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create a text file with content
+      copy:
+        content: "Hello from Ansible!"
+        dest: /opt/devops/info.txt
+        mode: '0755'
+...
